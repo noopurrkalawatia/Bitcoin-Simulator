@@ -1,0 +1,66 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+<script>
+  function renderTransactionChart() {
+    var ctx = document.getElementById("txChart").getContext('2d');
+    return new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        datasets: [{
+          label: 'Rate',
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          backgroundColor: 'rgba(46, 191, 255, 0.5)',
+          borderColor: 'rgba(46, 191, 255, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          fontSize: 35,
+          text: "Transaction Board"
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              display: true
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "Ongoing Transactions"
+            },
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  }
+
+</script>
+<body align = "center">
+
+
+<div class="col-md-6" margin-left="0px"  style="display:inline-block">
+
+  <div>
+    <div class="graph-container"> 
+      <canvas id="txChart" width="1200" height="600" align="center" margin-left="0px"  ></canvas>
+    </div>
+  </div>
+
+
+<p  margin-left = "500px">
+<footer>
+Created by : Noopur R K<br>
+UFID : 1980 - 9834<br>
+Thats all folks :)
+</footer>
+</p>
+<div>
+<script>
+  tx_chart = renderTransactionChart();
+</script>
